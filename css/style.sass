@@ -15,6 +15,14 @@ $section-bgc: #F6F6F8
 html
     scroll-behavior: smooth
 
+body
+    font-family: 'Montserrat', sans-serif
+    font-weight: 400
+    color: #000000
+
+html, body
+    height: 100%
+
 img
     display: block
     max-width: 100%
@@ -33,10 +41,12 @@ input
 button
     cursor: pointer
 
-body
-    font-family: 'Montserrat', sans-serif
-    font-weight: 400
-    color: #000000
+.wrapper
+    min-height: 100%
+    display: flex
+    flex-direction: column
+    &__top
+        flex-grow: 1
 
 .center
     padding-left: calc( 50% - 555px )
@@ -72,7 +82,7 @@ body
     line-height: 25px
     color: $text-color
 
-.small__text
+.small__text, .footer__link
     font-size: 14px
     line-height: 22px
     color: $text-color
@@ -266,17 +276,14 @@ body
 
 .video
     padding-top: 70px
-    padding-bottom: 85px
     display: flex
     flex-direction: column
     align-items: center
     position: relative
-    margin-bottom: 100px
     &-bg
+        max-width: 2140px
         position: absolute
         top: 0
-        left: 0
-        right: 0
         z-index: -1
         img
             width: 100%
@@ -321,3 +328,82 @@ body
         height: 1px
         margin-top: 85px
         background: #E0E0E0
+
+.subscribe
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding-top: 85px
+    padding-bottom: 85px
+    &__heading
+        text-align: center
+        margin-bottom: 30px
+    .small__title
+        margin-bottom: 20px
+    &__form
+        position: relative
+    &__input
+        width: 100%
+        padding: 12px 185px 12px 33px
+        font-family: 'Montserrat', sans-serif
+        font-weight: 400
+        font-size: 13px
+        line-height: 20px
+        border: 1px solid #F2F2F2
+        border-radius: 30px
+        box-shadow: 0px 0px 10px rgba(111, 111, 111, 0.25)
+        background: #FFFFFF
+    &__btn
+        position: absolute
+        top: 0
+        right: 0
+        padding: 13px 36px 13px 26px
+        font-family: 'Montserrat', sans-serif
+        font-weight: 500
+        font-size: 16px
+        line-height: 20px
+        border: none
+        border-radius: 0 30px 30px 0
+        color: #FFFFFF
+        background: #4985FF
+        transition: all .2s ease
+        &:hover
+            background-color: #14419c
+    .small__text
+        margin-top: 35px
+        font-size: 13px
+        line-height: 21px
+        text-align: center
+
+.footer
+    padding-top: 70px
+    background-color: $section-bgc
+    &__nav
+        display: flex
+        justify-content: space-between
+    &__list
+        display: flex
+        align-items: center
+        svg
+            margin-right: 13px
+        &:not(:last-child)
+            margin-bottom: 30px
+    .small__title
+        margin-bottom: 35px
+    &__link
+        width: 100%
+        transition: all .2s ease
+        &:hover
+            transform: scale(1.01)
+            color: #000000
+            svg path
+                fill: #000000
+    &__copyright
+        margin-top: 70px
+        padding-top: 30px
+        padding-bottom: 30px
+        border-top: 1px solid #E0E0E0
+    .small__text
+        font-size: 13px
+        line-height: 21px
+        text-align: center
